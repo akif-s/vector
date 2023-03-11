@@ -5,20 +5,20 @@ import (
 )
 
 type Vector2 struct {
-	x float64
-	y float64
+	X float64
+	Y float64
 }
 
-func NewVector2(x, y float64) Vector2 {
+func NewVector2(X, Y float64) Vector2 {
 	return Vector2{
-		x: x,
-		y: y,
+		X: X,
+		Y: Y,
 	}
 }
 
 // Calculates the dot product of two vectors
 func Dot(v1 Vector2, v2 Vector2) float64 {
-	return v1.x*v2.x + v1.y*v2.y
+	return v1.X*v2.X + v1.Y*v2.Y
 }
 
 // Calculates the angle between two vectors
@@ -28,26 +28,26 @@ func Angle(v1 Vector2, v2 Vector2) float64 {
 
 // Multiplies the each element of vector2 with a
 func (v Vector2) Product(a float64) Vector2 {
-	return NewVector2(v.x*a, v.y*a)
+	return NewVector2(v.X*a, v.Y*a)
 }
 
 func (v Vector2) Divide(a float64) Vector2 {
-	return NewVector2(v.x/a, v.y/a)
+	return NewVector2(v.X/a, v.Y/a)
 }
 
 // Adds two vector
 func (v1 Vector2) Sum(v2 Vector2) Vector2 {
-	return NewVector2(v1.x+v2.x, v1.y+v2.y)
+	return NewVector2(v1.X+v2.X, v1.Y+v2.Y)
 }
 
 // Substracts v2 from v1
 func (v1 Vector2) Substract(v2 Vector2) Vector2 {
-	return NewVector2(v1.x-v2.x, v1.y-v2.y)
+	return NewVector2(v1.X-v2.X, v1.Y-v2.Y)
 }
 
 // Calculates the magnitude of the vector
 func (v Vector2) Magnitude() float64 {
-	return math.Sqrt(v.x*v.x + v.y*v.y)
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 // Normalizes the given vector(returns it as a unit vector)
@@ -57,5 +57,5 @@ func (v Vector2) Normalize() Vector2 {
 
 // Returns the absolute of the vector
 func (v Vector2) Abs() Vector2 {
-	return NewVector2(math.Abs(v.x), math.Abs(v.y))
+	return NewVector2(math.Abs(v.X), math.Abs(v.Y))
 }
